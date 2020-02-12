@@ -18,7 +18,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Operator Mono" :size 14))
+(setq doom-font (font-spec :family "fira code" :size 14))
 
 (setq doom-theme 'doom-dark+)
 
@@ -33,7 +33,6 @@
 ;; preferred tab width
 (setq custom-tab-width 2)
 
-;; Two callable functions for enabling/disabling tabs in Emacs
 (defun disable-tabs () (setq indent-tabs-mode nil))
 (defun enable-tabs  ()
   (local-set-key (kbd "TAB") 'tab-to-tab-stop)
@@ -46,29 +45,22 @@
 (add-hook 'lisp-mode-hook 'disable-tabs)
 (add-hook 'emacs-lisp-mode-hook 'disable-tabs)
 
-;; Language-Specific Tweaks
-(setq-default js-indent-level custom-tab-width)      ;; Javascript
+;;stop indenting the preveous line on enter
+;(setq-default electric-indent-inhibit t)
 
-;; Making electric-indent behave sanely
-(setq-default electric-indent-inhibit t)
-
-;; Make the backspace properly erase the tab instead of
-;; removing 1 space at a time.
+;; treat double spaces like tabs
 (setq backward-delete-char-untabify-method 'hungry)
 
-;; (OPTIONAL) Shift width for evil-mode users
-;; For the vim-like motions of ">>" and "<<".
+;; keep the << and >> functions consistant with custom-tab-width
 (setq-default evil-shift-width custom-tab-width)
 
-;; WARNING: This will change your life
-;; (OPTIONAL) Visualize tabs as a pipe character - "|"
-;; This will also show trailing characters as they are useful to spot.
-(setq whitespace-style '(face tabs tab-mark trailing))
+;; Show tabs with verticle bar
+(setq whitespace-style '(face tab-mark trailing))
 (custom-set-faces
  '(whitespace-tab ((t (:foreground "#636363")))))
 (setq whitespace-display-mappings
-  '((tab-mark 9 [124 9] [92 9]))) ; 124 is the ascii ID for '\|'
-(global-whitespace-mode) ; Enable whitespace mode everywhere
+  '((tab-mark 9 [9474 9] [124 9])))
+(global-whitespace-mode)
 ; END TABS CONFIG
 
 ;; Here are some additional functions/macros that could help you configure Doom:
