@@ -32,11 +32,16 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     git
     zsh-syntax-highlighting
+    tmux
 )
+
+ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOQUIT="true"
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -47,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
