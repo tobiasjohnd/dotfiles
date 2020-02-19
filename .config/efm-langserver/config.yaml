@@ -1,5 +1,5 @@
   vim:
-    lint-command: 'vint -'
+    lint-command: 'vint --enable-neovim: -'
     lint-stdin: true
 
   markdown:

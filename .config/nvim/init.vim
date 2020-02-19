@@ -9,28 +9,85 @@
 " PLUGINS
 "{{{
 
+if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+  echo "Downloading junegunn/vim-plug to manage plugins..."
+  silent !mkdir -p ~/.config/nvim/autoload/
+  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'tomasiser/vim-code-dark'
-  Plug 'vim-airline/vim-airline'
-  Plug 'scrooloose/nerdtree'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'airblade/vim-gitgutter'
+Plug 'rakr/vim-one'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/goyo.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
-"}}}
+" coc extensions
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-vimlsp',
+  \ ]
 
+"}}}
 " THEMING/UI
 "{{{
 
-set foldmethod=marker
-:colorscheme codedark
+colorscheme one
+set background=dark
+
+set noshowmode
 set cmdheight=2
-let g:airline_theme = 'codedark'
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
+let g:airline_theme='raven'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = '☰'
+  let g:airline_symbols.maxlinenr = ''
+  let g:airline_symbols.dirty='⚡'
+endif
+
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#coc#enabled = 1
+
+set number
+set relativenumber
 set signcolumn=yes
+
+"}}}
+
+" TWEAKS
+"{{{
+
+set foldmethod=marker
+
+" tabs (spaces in disguise)
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+"set list
+
+" fix mouse in tmux
+if !has('nvim') " use this for backward compatability in vim
+  set ttymouse=xterm2
+endif
+set mouse=a
+
+"nicer split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 "}}}
 
@@ -42,8 +99,8 @@ set signcolumn=yes
 set hidden
 
 " Uncomment this if you have trouble with language servers
-"set nobackup
-"set nowritebackup
+set nobackup
+set nowritebackup
 
 " make diagnostic messages refresh more often
 set updatetime=500
@@ -55,9 +112,9 @@ set shortmess+=c
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
@@ -149,8 +206,7 @@ nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
+nnoremap <silent> <space>j  :<C>CocNext<CR>" Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>

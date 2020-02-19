@@ -35,9 +35,6 @@ plugins=(
     tmux
 )
 
-ZSH_TMUX_AUTOSTART="true"
-ZSH_TMUX_AUTOQUIT="true"
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -72,3 +69,5 @@ alias config='/usr/bin/git --git-dir=/home/toby/.dotfile-repo/ --work-tree=/home
 
 # doom emacs intsall utility
 alias doom="~/.emacs.d/bin/doom"
+
+source /home/toby/.config/broot/launcher/bash/br
