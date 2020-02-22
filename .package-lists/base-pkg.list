@@ -1,0 +1,11 @@
+base
+base-devel
+devtools
+dhcpd
+grub
+linux
+linux-firmware
+man-db
+moreutils
+networkmanager
+zsh

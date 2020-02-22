@@ -66,6 +66,7 @@ fi
 
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=/home/toby/.dotfile-repo/ --work-tree=/home/toby'
+alias config_local='/usr/bin/git --git-dir=/home/toby/.dotfiles_local/ --work-tree=/home/toby'
 
 # doom emacs intsall utility
 alias doom="~/.emacs.d/bin/doom"
