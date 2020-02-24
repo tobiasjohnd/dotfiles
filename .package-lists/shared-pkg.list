@@ -28,7 +28,6 @@ cronie
 fd
 xorg-server
 xorg-input
-light-locker
-lightdm-mini-greeter
+lightdm-webkit-theme-litarvan
 xf86-input-libinput
 qtile
