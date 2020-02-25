@@ -7,7 +7,6 @@ brave-bin
 broot
 cronie
 devtools
-dhcpd
 discord
 dropbox
 fd
@@ -31,6 +30,5 @@ spotify
 steam
 xdg-user-dirs
 xf86-input-libinput
-xorg-input
 xorg-server
 zsh
