@@ -30,5 +30,8 @@ spotify
 steam
 xdg-user-dirs
 xf86-input-libinput
+xmonad
+xmonad-contrib
 xorg-server
+xterm
 zsh
