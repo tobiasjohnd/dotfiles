@@ -1,8 +1,8 @@
 Term: xterm-256color
 window:
   padding:
-    x: 5
-    y: 5
+    x: 0
+    y: 0
   decorations: none
   startup_mode: Maximized
   title: Alacritty
@@ -13,18 +13,18 @@ scrolling:
   auto_scroll: true
 font:
   normal:
-    family: Fira Code
+    family: JetBrains Mono
     style: Regular
   bold:
-    family: Fira Code
+    family: JetBrains Mono
     style: Bold
   italic:
-    family: Fira Code
+    family: JetBrains Mono
     style: Italic
   bold_italic:
-    family: Fira Code
+    family: JetBrains Mono
     style: Bold Italic
-  size: 10.0
+  size: 8.0
 draw_bold_text_with_bright_colors: true
 colors:
   primary:
