@@ -1,74 +1,45 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/toby/.oh-my-zsh"
+# bootsrap zplug
+[ -f ~/.zplug/init.zsh ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+source $HOME/.zplug/init.zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="kardan"
+# declare plugins
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "softmoth/zsh-vim-mode"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search", defer:3
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# load/install plugins
+zplug check || zplug install
+zplug load
 
-#display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+## History
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.zsh_history
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+## Tab selection
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
 
-#format history timestamps
-HIST_STAMPS="yyyy-mm-dd"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-    zsh-syntax-highlighting
-    tmux
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+## Aliases
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=/home/toby/.dotfiles/shared/ --work-tree=/home/toby'
 alias config_local='/usr/bin/git --git-dir=/home/toby/.dotfiles/local/ --work-tree=/home/toby'
-
 # doom emacs intsall utility
 alias doom="~/.emacs.d/bin/doom"
 
-source /home/toby/.config/broot/launcher/bash/br
+## Plugin config
+# powerlevel10k config
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# auto sugestions
+ZSH_AUTOSUGGEST_STRATEGY=(completion history)
+# intro commands
+neofetch
