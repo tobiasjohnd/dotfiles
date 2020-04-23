@@ -8,7 +8,6 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug "softmoth/zsh-vim-mode"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
@@ -39,7 +38,5 @@ alias doom="~/.emacs.d/bin/doom"
 ## Plugin config
 # powerlevel10k config
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# auto sugestions
-ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 # intro commands
 neofetch
