@@ -15,7 +15,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 Plug 'ap/vim-css-color'
 Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -28,9 +28,9 @@ colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_uniform_status_lines = 1
 let g:nord_uniform_diff_background = 1
-
-let g:airline_theme='simple'
 set termguicolors
+
+source ~/.config/nvim/lightlinerc.vim
 
 " Comand/status lines
 set noshowmode
