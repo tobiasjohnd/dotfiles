@@ -1,11 +1,11 @@
 " Colors
-let s:main    = [ '#4C566A', 'NONE'    ]
-let s:error   = [ '#2E3440', '#BF616A' ]
-let s:warning = [ '#2E3440', '#EBCB8B' ]
-let s:normal  = [ '#D8DEE9', 'NONE'    ]
-let s:insert  = [ '#A3BE8C', 'NONE'    ]
-let s:replace = [ '#D08770', 'NONE'    ]
-let s:visual  = [ '#B48EAD', 'NONE'    ]
+let s:main    = [ '#928374',  'NONE'    ]
+let s:error   = [ 'NONE',     '#CC241D' ]
+let s:warning = [ 'NONE',     '#D79921' ]
+let s:normal  = [ '#EBDBB2',  'NONE'    ]
+let s:insert  = [ '#689D6A',  'NONE'    ]
+let s:replace = [ '#B16286',  'NONE'    ]
+let s:visual  = [ '#D65D0E',  'NONE'    ]
 
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
