@@ -1,41 +1,46 @@
-
 " ---PLUGINS---
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.config/nvim/plugged')
-Plug 'ap/vim-css-color'
-Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
-Plug 'airblade/vim-gitgutter' "TODO config this to check against dofile repo when necesary
-Plug 'junegunn/goyo.vim' "TODO configure this + keybindings
-Plug 'christoomey/vim-tmux-navigator'
-call plug#end()
+source ~/.config/nvim/plugins.vim
+ 
+"---LSP---
+luafile ~/.config/nvim/lsp.lua
 
+set omnifunc=v:lua.vim.lsp.omnifunc
+
+inoremap <expr> <tab>   pumvisible() ? "\<C-n>" : "\<tab>"
+inoremap <expr> <S-tab> pumvisible() ? "\<C-p>" : "\<S-tab>"
+
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+
+" ---CONFIGS---
 source ~/.config/nvim/lookandfeel.vim
 
-" ---TWEAKS---
-set foldmethod=syntax
-set foldcolumn=1
-set foldignore="#"
+" ---TWEAKS---,
 
-" tabs (spaces in disguise)
-set shiftwidth=2
-set softtabstop=2
+" indenting
+set tabstop=4
+set shiftwidth=4
 set expandtab
+
+" Goyo	
+let g:goyo_linenr=1
+let g:goyo_height="100%"
+set foldcolumn=0
+let g:goyo_width=80
 
 " fix mouse in tmux
 if !has('nvim') " use this for backward compatability in vim
-    set ttymouse=xterm2
+	set ttymouse=xterm2
 endif
 set mouse=a
 
 set updatetime=100
 
+set fillchars=stl:\ ,stlnc:\ ,fold:\ ,vert:\ ,
 " ---BINDINGS---
 map <Space> <Leader>
+
+map <silent> <F11> :Goyo<cr>
 
 "nicer split navigation
 map <C-h> <C-w>h
