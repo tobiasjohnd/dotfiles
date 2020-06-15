@@ -5,3 +5,4 @@ end
 
 require'nvim_lsp'.vimls.setup{on_attach=attach_wrappers}
 require'nvim_lsp'.bashls.setup{on_attach=attach_wrappers}
+require'nvim_lsp'.ghcide.setup{on_attach=attach_wrappers}
