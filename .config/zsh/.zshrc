@@ -7,8 +7,9 @@ fi
 
 
 # bootsrap zplug
-[ -f ~/.zplug/init.zsh ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-source $HOME/.zplug/init.zsh
+export ZPLUG_HOME=$HOME/.config/zsh/.zplug
+[ -f ~/.config/zsh/.zplug/init.zsh ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+source $HOME/.config/zsh/.zplug/init.zsh
 
 # declare plugins
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -37,8 +38,7 @@ _comp_options+=(globdots)
 
 ## Aliases
 # git bare repo alias for dotfiles
-alias config='/usr/bin/git --git-dir=/home/toby/.dotfiles/shared/ --work-tree=/home/toby'
-alias config_local='/usr/bin/git --git-dir=/home/toby/.dotfiles/local/ --work-tree=/home/toby'
+alias config='/usr/bin/git --git-dir=/home/toby/.config-repos/main/ --work-tree=/home/toby'
 
 ## Plugin config
 # powerlevel10k config

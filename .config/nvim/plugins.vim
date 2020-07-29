@@ -12,5 +12,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'haorenW1025/completion-nvim'
     Plug 'haorenW1025/diagnostic-nvim'
     Plug 'neovim/nvim-lsp'
-    Plug 'nanotech/jellybeans.vim'
+    Plug 'ayu-theme/ayu-vim'
+    Plug 'owickstrom/vim-colors-paramount'
 call plug#end()

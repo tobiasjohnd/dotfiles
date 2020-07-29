@@ -1,22 +1,14 @@
 " ---colourscheme---
 set termguicolors
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
-let g:gruvbox_sign_column='bg0'
-let g:gruvbox_vert_split='bg0'
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_invert_selection=0
 let g:jellybeans_use_term_italics=1
-colorscheme jellybeans
+let ayucolor="dark"
+colorscheme ayu
 
 " multicoloured brackets
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
 " GitGutter
 set number
 set signcolumn=no
@@ -42,7 +34,7 @@ set showtabline=2
 hi clear StatusLineNC
 hi clear StatusLine
 hi link StatusLine SignColumn
-
+hi Normal guibg=NONE ctermbg=NONE
 " lightline config
 let g:lightline = {}
 let g:lightline.active = {
