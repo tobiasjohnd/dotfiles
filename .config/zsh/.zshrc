@@ -42,4 +42,4 @@ alias config='/usr/bin/git --git-dir=/home/toby/.config-repos/main/ --work-tree=
 
 ## Plugin config
 # powerlevel10k config
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh

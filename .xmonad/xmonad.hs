@@ -55,7 +55,7 @@ main = do
       -- simple stuff
         terminal            = MyApps.terminal,
         modMask             = mod4Mask,
-        workspaces          = ["1","2","3","4","5","6","dev","chat","web"],
+        workspaces          = ["1","2","3","4","5","6","7","8:chat","9:web"],
 
         borderWidth         = 0,
         normalBorderColor   = "#1B2733",
