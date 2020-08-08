@@ -11,16 +11,17 @@
   #TERM: alacritty
 
 window:
-  dimensions:
-    columns: 0
-    lines: 0
-  position:
-    x: 0
-    y: 0
-  padding:
-    x: 3
-    y: 3
+    dimensions:
+        columns: 0
+        lines: 0
+    position:
+        x: 0
+        y: 0
+    padding:
+        x: 3
+        y: 3
     dynamic_padding: true
+    dynamic_title: true
 
 #scrolling:
   # Specifying 	'0' will disable scrolling.
@@ -90,13 +91,12 @@ colors:
   #
   #indexed_colors: []
 
-background_opacity: 1
+background_opacity: 0.9
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 
-dynamic_title: true
 
 cursor:
   # Values for `style`:

@@ -35,5 +35,7 @@ keybinds conf = additionalKeysP conf
 
     , ("M-,"            , sendMessage (IncMasterN 1)) 
     , ("M-."            , sendMessage (IncMasterN (-1)))
+    
+    , ("M-<Tab>"            , sendMessage NextLayout)
     ]
 

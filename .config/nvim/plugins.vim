@@ -9,9 +9,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'airblade/vim-gitgutter'
     Plug 'junegunn/goyo.vim'
     Plug 'kien/rainbow_parentheses.vim'
-    Plug 'haorenW1025/completion-nvim'
-    Plug 'haorenW1025/diagnostic-nvim'
-    Plug 'neovim/nvim-lsp'
     Plug 'ayu-theme/ayu-vim'
     Plug 'owickstrom/vim-colors-paramount'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'mcchrish/nnn.vim'
+    Plug 'tpope/vim-fugitive'
 call plug#end()

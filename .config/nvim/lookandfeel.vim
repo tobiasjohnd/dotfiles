@@ -11,19 +11,18 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " GitGutter
 set number
-set signcolumn=no
 
 let g:gitgutter_signs = 0
 let g:gitgutter_highlight_linenrs = 1
-silent! !git rev-parse --is-inside-work-tree
-if v:shell_error != 0
-  let g:gitgutter_git_args='--git-dir="/home/toby/.dotfiles/shared/" --work-tree="/home/toby"'
-endif
 
 highlight link GitGutterAddLineNr           GitGutterAdd
 highlight link GitGutterChangeLineNr        GitGutterChange
 highlight link GitGutterDeleteLineNr        GitGutterDelete
 highlight link GitGutterChangeDeleteLineNr  GitGutterChangeDelete
+
+" ---NNN---
+
+let nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 " ---Statusline---
 set noshowmode
@@ -39,7 +38,7 @@ hi Normal guibg=NONE ctermbg=NONE
 let g:lightline = {}
 let g:lightline.active = {
     \ 'left': [ [ 'mode', 'paste' ], [ 'filename' ] ],
-    \ 'right': [ [ 'lineinfo' ], [ 'filetype' ] ] }
+    \ 'right': [ [ 'lineinfo', 'cocststatus' ], [ 'filetype' ] ] }
 let g:lightline.inactive = {
     \ 'left': [ [ 'filename' ] ],
     \ 'right': [ [ 'lineinfo' ] ] }
@@ -56,6 +55,9 @@ let g:lightline.component = {
     \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
     \ 'lineinfo': '%p%% %l:%-c', 
     \ 'cwd': '%{getcwd()}  -'}
+let g:lightline.component_function = {
+    \ 'cocstatus': 'coc#status'
+    \ }
 let g:lightline.colorscheme = 'simple'
 let g:lightline.separator = { 'left': '', 'right': '' }
 let g:lightline.subseparator = { 'left': '', 'right': '' }

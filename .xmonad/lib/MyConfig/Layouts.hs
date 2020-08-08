@@ -17,7 +17,7 @@ import XMonad.Layout.Tabbed
 
 ----------------------------------------------------------------------------------------------------
 
-mySpacing x = spacingRaw True (Border x x x x) True (Border x x x x) True
+mySpacing x = spacingRaw False (Border x x x x) True (Border x x x x) True
 
 ----------------------------------------------------------------------------------------------------
 -- Layouts

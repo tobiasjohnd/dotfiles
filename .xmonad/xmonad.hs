@@ -3,6 +3,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 
@@ -33,18 +34,18 @@ myLogHook xmproc = do
         , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
         , ppOrder  = \(ws:_:t:_) -> [ws,t]
         }
-    fadeInactiveLogHook 0.8
+    --fadeInactiveLogHook 1
  
 
 ------------------------------------------------------------------------
 -- Startup hook
 
 myStartupHook = do
-    spawn     "sh ~/scripts/desktop_env/update_wallpaper.sh &"
+    spawn     "feh --bg-fill $(ls -d $HOME/Pictures/Wallpapers/* | shuf | head -1)"
     spawnOnce "picom &"
     spawnOnce "nm-applet &"
     spawnOnce "discord &"
-    spawnOnce "stalonetray -c /home/toby/.xmonad/stalonetray.config &"
+    spawn "killall stalonetray ; stalonetray -c /home/toby/.xmonad/stalonetray.config &"
     spawnOnce "setxkbmap gb &"
 
 ------------------------------------------------------------------------
@@ -57,7 +58,7 @@ main = do
         modMask             = mod4Mask,
         workspaces          = ["1","2","3","4","5","6","7","8:chat","9:web"],
 
-        borderWidth         = 0,
+        borderWidth         = 1,
         normalBorderColor   = "#1B2733",
         focusedBorderColor  = "#273747",
 
@@ -68,5 +69,6 @@ main = do
         layoutHook          = myLayoutHook,
         manageHook          = windowRules,
         logHook             = myLogHook xmproc,
-        startupHook         = myStartupHook
+        startupHook         = myStartupHook,
+        handleEventHook     = fullscreenEventHook
     }
