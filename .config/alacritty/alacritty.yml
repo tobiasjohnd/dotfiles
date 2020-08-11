@@ -33,16 +33,16 @@ window:
 
 font:
   normal:
-    family: mononoki Nerd Font
+    family: MesloLGS NF
     style: Regular
   bold:
-    family: mononoki Nerd Font
+    family: MesloLGS NF
     style: Bold
   italic:
-    family: mononoki Nerd Font
+    family: MesloLGS NF
     style: Italic
   bold_italic:
-    family: mononoki Nerd Font
+    family: MesloLGS NF
     style: Bold Italic
   size: 7.5
   offset:
