@@ -11,18 +11,11 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " GitGutter
 set number
-
-let g:gitgutter_signs = 0
-let g:gitgutter_highlight_linenrs = 1
-
-highlight link GitGutterAddLineNr           GitGutterAdd
-highlight link GitGutterChangeLineNr        GitGutterChange
-highlight link GitGutterDeleteLineNr        GitGutterDelete
-highlight link GitGutterChangeDeleteLineNr  GitGutterChangeDelete
+set signcolumn=number
 
 " ---NNN---
 
-let nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+let nnn#layout = { 'window': { 'width': 0.8, 'height': 0.8, 'highlight': 'Debug' } }
 
 " ---Statusline---
 set noshowmode

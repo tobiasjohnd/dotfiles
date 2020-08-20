@@ -1,3 +1,5 @@
 [user]
 	email = tbdickenson@googlemail.com
 	name = Toby Dickenson
+[pull]
+	rebase = false

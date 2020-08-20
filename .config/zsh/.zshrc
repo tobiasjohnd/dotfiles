@@ -36,6 +36,8 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
+export BW_SESSION="$(cat /home/toby/.cache/bitwarden/session_key)"
+
 ## Aliases
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=/home/toby/.config-repos/main/ --work-tree=/home/toby'

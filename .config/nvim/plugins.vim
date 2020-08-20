@@ -14,4 +14,5 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'mcchrish/nnn.vim'
     Plug 'tpope/vim-fugitive'
+    Plug 'editorconfig/editorconfig-vim'
 call plug#end()
