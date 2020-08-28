@@ -1,11 +1,10 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-killall -q polybar
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
 
 if [ "$(uname -n)" = "TobyPC" ]; then
-    bspc monitor DisplayPort-2 -d 1 2 3 4 5
+    bspc monitor DisplayPort-0 -d 1 2 3 4 5
     bspc monitor DisplayPort-1 -d term web doc entertainment chat
 else
     bspc monitor -d 1 2 3 4 5 6 7 8 9 0
@@ -26,10 +25,3 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 bw unlock $(cat /home/toby/.cache/bitwarden/master_password ) --raw > ~/.cache/bitwarden/session_key
-
-setxkbmap gb
-sh ~/.screenlayout/DesktopLayout.sh
-feh --bg-fill $(ls -d $HOME/Pictures/Wallpapers/* | shuf | head -1)
-picom &
-nm-applet &
-polybar example &
