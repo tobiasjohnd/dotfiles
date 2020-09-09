@@ -11,7 +11,6 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " GitGutter
 set number
-set signcolumn=number
 
 " ---NNN---
 

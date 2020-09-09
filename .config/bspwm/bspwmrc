@@ -3,9 +3,9 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 
-if [ "$(uname -n)" = "TobyPC" ]; then
-    bspc monitor DisplayPort-0 -d 1 2 3 4 5
-    bspc monitor DisplayPort-1 -d term web doc entertainment chat
+if [ "$(uname -n)" = "tobypc" ]; then
+    bspc monitor DP-1 -d 1 2 3 4 5
+    bspc monitor DP-2 -d 6 7 8 9 0
 else
     bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 fi
@@ -24,4 +24,9 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-bw unlock $(cat /home/toby/.cache/bitwarden/master_password ) --raw > ~/.cache/bitwarden/session_key
+picom &
+flameshot &
+nm-applet &
+
+sh ~/Scripts/Environment/polybar.sh
+sh ~/Scripts/Environment/wallpaper.sh

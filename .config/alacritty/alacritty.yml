@@ -32,25 +32,8 @@ window:
   #multiplier: 3
 
 font:
-  normal:
-    family: MesloLGS NF
-    style: Regular
-  bold:
-    family: MesloLGS NF
-    style: Bold
-  italic:
-    family: MesloLGS NF
-    style: Italic
-  bold_italic:
-    family: MesloLGS NF
-    style: Bold Italic
-  size: 7.5
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
+  family: Hack Nerd Font
+  size: 8.5
 draw_bold_text_with_bright_colors: true
 # Colors (Ayu Dark)
 colors:

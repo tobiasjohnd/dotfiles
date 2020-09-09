@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
 # bootsrap zplug
 export ZPLUG_HOME=$HOME/.config/zsh/.zplug
 [ -f ~/.config/zsh/.zplug/init.zsh ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
@@ -36,12 +35,13 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-export BW_SESSION="$(cat /home/toby/.cache/bitwarden/session_key)"
-
 ## Aliases
 # git bare repo alias for dotfiles
-alias config='/usr/bin/git --git-dir=/home/toby/.config-repos/main/ --work-tree=/home/toby'
+alias config='/usr/bin/git --git-dir=$HOME/.config-repos/main/ --work-tree=$HOME'
 
 ## Plugin config
 # powerlevel10k config
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
