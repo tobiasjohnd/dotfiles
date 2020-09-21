@@ -1,4 +1,4 @@
 #! bin/sh
 
-killall -qw polybar
+pgrep -x polybar > /dev/null && killall -qw polybar
 polybar mybar &

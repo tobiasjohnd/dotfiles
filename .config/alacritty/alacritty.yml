@@ -74,7 +74,7 @@ colors:
   #
   #indexed_colors: []
 
-background_opacity: 0.9
+background_opacity: 1
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

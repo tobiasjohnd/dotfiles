@@ -48,7 +48,6 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Symbols Nerd Font:pixelsize=10;1
 
 modules-left = updates bspwm
-modules-center = timer
 modules-right = pulseaudio-control battery date
 
 tray-position = right
