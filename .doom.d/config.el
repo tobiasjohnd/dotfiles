@@ -26,6 +26,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-sourcerer)
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 14))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -36,6 +37,9 @@
 (setq display-line-numbers-type 'relative)
 
 (setq doom-modeline-bar-width 0)
+
+(setq initial-frame-alist
+      '((top . 1) (left . 1) (width . 100) (height . 70)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
