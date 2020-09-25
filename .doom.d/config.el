@@ -1,13 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Toby Dickenson"
+      user-mail-address "tbdickenson@googlemail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -22,24 +16,18 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-sourcerer)
-(setq doom-font (font-spec :family "Hack Nerd Font" :size 14))
+(setq doom-font (font-spec :family "Hack Nerd Font" :size 13))
+(setq doom-variable-pitch-font (font-spec :family "Noto Sans"))
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
 (setq doom-modeline-bar-width 0)
 
 (setq initial-frame-alist
-      '((top . 1) (left . 1) (width . 100) (height . 70)))
+      '((top . 50) (left . 30) (width . 90) (height . 55)))
+
+(setq +doom-dashboard-functions 'doom-dashboard-widget-banner)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
