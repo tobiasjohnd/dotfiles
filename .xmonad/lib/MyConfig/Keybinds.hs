@@ -8,11 +8,7 @@ import qualified Data.Map        as M
 import qualified MyConfig.DefaultApps as MyApps
 
 keybinds conf = additionalKeysP conf 
-    [ ("M-C-t"          , spawn MyApps.terminal)
-    , ("M-C-w"          , spawn MyApps.browser)
-    , ("M-C-f"          , spawn MyApps.fileManager)
-    , ("M-C-S-f"        , spawn MyApps.fileManagerGui)
-    , ("M-C-e"          , spawn MyApps.textEditor)
+    [ ("M-<Return>"          , spawn MyApps.terminal)
     , ("M-<Space>"      , spawn MyApps.appLauncher)
 
     , ("M-S-c"          , kill)
@@ -22,11 +18,9 @@ keybinds conf = additionalKeysP conf
 
     , ("M-j"            , windows W.focusDown)
     , ("M-k"            , windows W.focusUp)
-    , ("M-<Return>"     , windows W.focusMaster)
 
     , ("M-S-j"          , windows W.swapDown)
     , ("M-S-k"          , windows W.swapUp)
-    , ("M-S-<Return>"   , windows W.swapMaster)
 
     , ("M-h"            , sendMessage Shrink)
     , ("M-l"            , sendMessage Expand)

@@ -22,12 +22,10 @@
 
 (setq display-line-numbers-type 'relative)
 
-(setq doom-modeline-bar-width 0)
-
 (setq initial-frame-alist
-      '((top . 50) (left . 30) (width . 90) (height . 55)))
+      '((width . 90) (height . 55)))
 
-(setq +doom-dashboard-functions 'doom-dashboard-widget-banner)
+(setq +doom-dashboard-functions 'doom-dashboard-widget-shortmenu)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

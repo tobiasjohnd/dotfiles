@@ -45,12 +45,10 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-## ENV vars
-export EDITOR=nvim
-export PATH=$HOME/.emacs.d/bin:$PATH
 ## Aliases
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.config-repos/main/ --work-tree=$HOME'
+alias checkstyle='checkstyle -c $HOME/.config/checkstyle/inlinebrackets.xml'
 
 ## Plugin config
 # powerlevel10k config
