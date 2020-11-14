@@ -19,7 +19,7 @@ let nnn#layout = { 'window': { 'width': 0.8, 'height': 0.8, 'highlight': 'Debug'
 " ---Statusline---
 set noshowmode
 set cmdheight=1
-set showtabline=2
+set showtabline=1
 
 " removing statusline background
 hi clear StatusLineNC
@@ -35,7 +35,7 @@ let g:lightline.inactive = {
     \ 'left': [ [ 'filename' ] ],
     \ 'right': [ [ 'lineinfo' ] ] }
 let g:lightline.tabline = {
-    \ 'left': [ [ 'cwd' ], [ 'tabs' ] ] }
+    \ 'left': [ [ 'tabs' ] ] }
 let g:lightline.tabline_separator = { 'left': '' , 'right': '' }
 let g:lightline.tab = {
     \ 'active'    : [ 'filename', 'modified' ],
@@ -46,7 +46,7 @@ let g:lightline.component = {
     \ 'filename': '%f',
     \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
     \ 'lineinfo': '%p%% %l:%-c', 
-    \ 'cwd': '%{getcwd()}  -'}
+    \ 'cwd': '%{getcwd()}'}
 let g:lightline.component_function = {
     \ 'cocstatus': 'coc#status'
     \ }
@@ -56,4 +56,4 @@ let g:lightline.subseparator = { 'left': '', 'right': '' }
 let g:lightline.enable = {
     \ 'statusline': 1,
     \ 'tabline': 1
-    \ }
+    \ } 

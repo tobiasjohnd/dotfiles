@@ -11,6 +11,9 @@ import MyConfig.Keybinds
 import MyConfig.Layouts
 import qualified MyConfig.DefaultApps as MyApps
 
+-- WISHLIST
+-- * polybar support
+
 ------------------------------------------------------------------------
 -- Window rules:
 
@@ -44,9 +47,6 @@ myStartupHook = do
     spawn     "feh --bg-fill $(ls -d $HOME/Pictures/Wallpapers/* | shuf | head -1)"
     spawnOnce "picom &"
     spawnOnce "nm-applet &"
-    spawnOnce "discord &"
-    spawn "killall stalonetray ; stalonetray -c /home/toby/.xmonad/stalonetray.config &"
-    spawnOnce "setxkbmap gb &"
 
 ------------------------------------------------------------------------
 

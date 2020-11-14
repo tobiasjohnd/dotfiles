@@ -47,8 +47,8 @@ _comp_options+=(globdots)
 
 ## Aliases
 # git bare repo alias for dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.config-repos/main/ --work-tree=$HOME'
-alias checkstyle='checkstyle -c $HOME/.config/checkstyle/inlinebrackets.xml'
+alias config='/usr/bin/git --git-dir=$HOME/.config-repo/ --work-tree=$HOME'
+alias checkstyle='checkstyle -c $HOME/.config/checkstyle/separatebrackets.xml'
 
 ## Plugin config
 # powerlevel10k config
