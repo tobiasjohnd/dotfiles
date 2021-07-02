@@ -18,11 +18,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kien/rainbow_parentheses.vim'
     Plug 'ayu-theme/ayu-vim'
     Plug 'mcchrish/nnn.vim'
-    Plug 'tpope/vim-fugitive' "TODO
+"    Plug 'tpope/vim-fugitive' "TODO
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'neovim/nvim-lspconfig' "TODO
-    Plug 'nvim-lua/completion-nvim'
-    Plug 'nvim-lua/diagnostic-nvim'
+"    Plug 'neovim/nvim-lspconfig' "TODO
+"    Plug 'nvim-lua/completion-nvim'
+"    Plug 'nvim-lua/diagnostic-nvim'
     " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " Plug 'Shougo/deoplete-lsp'
 call plug#end()
@@ -74,20 +74,20 @@ let g:nnn#action = {
     \ '<C-v>': 'vsplit'}
 let g:nnn#replace_netrw = 1
 
-" ---LSP---
-:lua << END
-    local on_attach_vim = function(client)
-        require'completion'.on_attach(client)
-        require'diagnostic'.on_attach(client)
-    end
-
-    require'nvim_lsp'.vimls.setup{on_attach=on_attach_vim}
-    require'nvim_lsp'.bashls.setup{on_attach=on_attach_vim}
-    require'nvim_lsp'.ghcide.setup{on_attach=on_attach_vim}
-    require'nvim_lsp'.jdtls.setup{on_attach=on_attach_vim}
-    require'nvim_lsp'.hls.setup{on_attach=on_attach_vim}
-
-END
+ " ---LSP---
+" :lua << END
+"     local on_attach_vim = function(client)
+"         require'completion'.on_attach(client)
+"         require'diagnostic'.on_attach(client)
+"     end
+" 
+"     require'nvim_lsp'.vimls.setup{on_attach=on_attach_vim}
+"     require'nvim_lsp'.bashls.setup{on_attach=on_attach_vim}
+"     require'nvim_lsp'.ghcide.setup{on_attach=on_attach_vim}
+"     require'nvim_lsp'.jdtls.setup{on_attach=on_attach_vim}
+"     require'nvim_lsp'.hls.setup{on_attach=on_attach_vim}
+" 
+" END
 
 let g:diagnostic_insert_delay = 1
 
