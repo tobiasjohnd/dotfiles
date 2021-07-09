@@ -98,10 +98,10 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 " ---Indenting---
-set tabstop=8
 set shiftwidth=4
-set expandtab
-set smarttab
+set softtabstop=4
+set noexpandtab
+set smartindent
 
 " ---Goyo---
 let g:goyo_height="100%"
