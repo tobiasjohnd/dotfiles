@@ -1,10 +1,13 @@
 " ---Wishlist---
 " TODO config code folding
 " TODO set up nvimlsp
-" TODO fzf.vim
+" TODO telescope.nvim
+" TODO language server memes
+" TODO git integration
 " TODO make a keybinging for the folowing
 "       TODO check diagnostics
 "       TODO run tests
+
 " ---Plugins---
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 	silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
@@ -13,18 +16,14 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 call plug#begin('~/.config/nvim/plugged')
     Plug 'ap/vim-css-color'
-    Plug 'itchyny/lightline.vim'
-    Plug 'junegunn/goyo.vim'
     Plug 'kien/rainbow_parentheses.vim'
+    Plug 'itchyny/lightline.vim'
     Plug 'ayu-theme/ayu-vim'
-    Plug 'mcchrish/nnn.vim'
-"    Plug 'tpope/vim-fugitive' "TODO
     Plug 'editorconfig/editorconfig-vim'
-"    Plug 'neovim/nvim-lspconfig' "TODO
-"    Plug 'nvim-lua/completion-nvim'
-"    Plug 'nvim-lua/diagnostic-nvim'
-    " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    " Plug 'Shougo/deoplete-lsp'
+
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'mfussenegger/nvim-jdtls' 
+    
 call plug#end()
 
 " ---Theme---
@@ -75,19 +74,11 @@ let g:nnn#action = {
 let g:nnn#replace_netrw = 1
 
  " ---LSP---
-" :lua << END
-"     local on_attach_vim = function(client)
-"         require'completion'.on_attach(client)
-"         require'diagnostic'.on_attach(client)
-"     end
-" 
-"     require'nvim_lsp'.vimls.setup{on_attach=on_attach_vim}
-"     require'nvim_lsp'.bashls.setup{on_attach=on_attach_vim}
-"     require'nvim_lsp'.ghcide.setup{on_attach=on_attach_vim}
-"     require'nvim_lsp'.jdtls.setup{on_attach=on_attach_vim}
-"     require'nvim_lsp'.hls.setup{on_attach=on_attach_vim}
-" 
-" END
+lua << END
+
+    require'lspconfig'.vimls.setup{}
+ 
+END
 
 let g:diagnostic_insert_delay = 1
 
@@ -103,17 +94,12 @@ set softtabstop=4
 set noexpandtab
 set smartindent
 
-" ---Goyo---
-let g:goyo_height="100%"
-let g:goyo_width="92%"
-
 " Fix mouse in tmux
 set mouse=a
 set updatetime=100
 
 " ---Bindings---
 map <Space> <Leader>
-map <silent> <F11> :Goyo<cr>
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
