@@ -12,7 +12,6 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config single_monocle false
 
-
 bspc rule -r "*"
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
@@ -21,7 +20,6 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Lollypop desktop='^4'
 bspc rule -a discord desktop='^5'
 
-
 setxkbmap gb
 wmname compiz
 
@@ -29,7 +27,13 @@ picom &
 flameshot &
 nm-applet &
 
-walset &
+nitrogen --restore
+
+syncthing-gtk --minimized &
+
+# mate stuff
+/usr/lib64/mate-settings-daemon/mate-settings-damon &
+# mate-screensaver &
+mate-power-manager &
 
 killall -wq polybar; polybar bspwmbar
-

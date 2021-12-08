@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00080e14
+background = #080e14
 
 ;foreground = ${xrdb:color7:#222}
 foreground = #b3b1ad
@@ -29,7 +29,7 @@ alert = #ff3333
 [bar/base]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 20
+height = 2%
 fixed-center = true
 bottom = false
 
@@ -42,11 +42,14 @@ padding-right = 2
 module-margin-right = 5
 modules-left = date pulseaudio-control battery
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:size=20;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = Symbols Nerd Font:pixelsize=10;1
+
 tray-position = right
-tray-padding = 2
+;tray-background = ${colors.background}
+tray-padding = 5
+tray-maxsize = 30
 
 [bar/bspwmbar]
 inherit = bar/base
@@ -131,8 +134,8 @@ type = internal/battery
 
 full-at = 100
 
-adapter = ACAD
-battery = BAT1
+adapter = AC
+battery = BAT0
 
 time-format = %H:%M
 label-charging = %percentage%%
