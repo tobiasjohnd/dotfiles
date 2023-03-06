@@ -21,9 +21,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'ayu-theme/ayu-vim'
     Plug 'editorconfig/editorconfig-vim'
 
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'mfussenegger/nvim-jdtls' 
-    
 call plug#end()
 
 " ---Theme---
@@ -73,20 +70,12 @@ let g:nnn#action = {
     \ '<C-v>': 'vsplit'}
 let g:nnn#replace_netrw = 1
 
- " ---LSP---
-lua << END
 
-    require'lspconfig'.vimls.setup{}
- 
-END
+"inoremap <expr> <tab>   pumvisible() ? "\<C-n>" : "\<tab>"
+"inoremap <expr> <S-tab> pumvisible() ? "\<C-p>" : "\<S-tab>"
 
-let g:diagnostic_insert_delay = 1
-
-inoremap <expr> <tab>   pumvisible() ? "\<C-n>" : "\<tab>"
-inoremap <expr> <S-tab> pumvisible() ? "\<C-p>" : "\<S-tab>"
-
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
+"set completeopt=menuone,noinsert,noselect
+"set shortmess+=c
 
 " ---Indenting---
 set shiftwidth=4
