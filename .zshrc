@@ -56,3 +56,5 @@ alias checkstyle='checkstyle -c $HOME/.config/checkstyle/separatebrackets.xml'
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+[ -f "/home/tobyd/.ghcup/env" ] && source "/home/tobyd/.ghcup/env" # ghcup-env
