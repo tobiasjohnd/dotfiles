@@ -1,3 +1,9 @@
+# dependencies
+```bash
+sudo apt install git tmux zsh
+```
+> or whatever the comand is on your distro. (dont care + didn't ask)
+
 # the script to install everything
 ```bash
 #!/usr/bin/env bash
@@ -19,3 +25,17 @@ chmod u+x nvim.appimage
 sudo mkdir -p /opt/nvim
 sudo mv nvim.appimage /opt/nvim/nvim
 ```
+
+# TODO
+- [ ] get the script nicely automated
+- [ ] review nvim config
+  - [ ] what features do i need
+  - [ ] what is the best way to implemente them (less plugins = better
+  - [ ] what languages do i need to suport?
+  - [ ] cmake?
+  - [ ] javascript?
+- [ ] tmux
+- [ ] note taking?
+- [ ] emacs?
+- [ ] vscode?
+- [ ] tranmission? (piracy)
