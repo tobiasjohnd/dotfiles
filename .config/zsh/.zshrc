@@ -38,6 +38,8 @@ _comp_options+=(globdots)
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.config-repo/ --work-tree=$HOME'
 
+# TODO: make it so i can have an alias that takes me to a session selection dialogue.
+
 # source plugins
 source $plugin_dir/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $plugin_dir/p10k/powerlevel10k.zsh-theme
@@ -50,4 +52,9 @@ source ~/.config/zsh/p10k.zsh
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+export PATH="$PATH:/opt/nvim/"
 [ -f "/home/tobyd/.ghcup/env" ] && source "/home/tobyd/.ghcup/env" # ghcup-env
+
+if ! test -n "$TMUX"; then
+    tmux attach || tmux
+fi
