@@ -1,24 +1,12 @@
----Wishlist---
--- TODO code folding
--- TODO set up nvimlsp
--- TODO telescope.nvim harpoon?
--- TODO nnn file manager
--- TODO language server memes
--- TODO git integration
--- TODO make a keybinging for the folowing
---       TODO check diagnostics
---       TODO run tests
+-- TODO move the lazypath init and options to new files
+-- TODO set up nvimlsp --
+    -- lsp zero
+-- TODO statusline config lualine? 
+-- TODO finish sealing from the primagen's config
+-- TODO explore treesitter memes a little more
 
----keybinds---
+require("bindings")
 
-vim.g.mapleader='<Space>'
-
-vim.keymap.set('', '<C-h>', '<C-w>h')
-vim.keymap.set('', '<C-j>', '<C-w>j')
-vim.keymap.set('', '<C-k>', '<C-w>k')
-vim.keymap.set('', '<C-l>', '<C-w>l')
-
----Plugins---
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -33,7 +21,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = "plugins",
+    change_detection = {notify = false}
+})
 
 ---options---
 
