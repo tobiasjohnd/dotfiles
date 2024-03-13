@@ -1,7 +1,10 @@
 # dependencies
-```bash
-sudo apt install git tmux zsh
-```
+- zsh
+- tmux
+- fd-find
+- ripgrep
+- nvim (installed automatically with appimage)
+- fuse2 (for the appimage)
 > or whatever the comand is on your distro. (dont care + didn't ask)
 
 # the script to install everything
