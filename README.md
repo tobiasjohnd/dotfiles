@@ -29,13 +29,11 @@ sudo mv nvim.appimage /opt/nvim/nvim
 # TODO
 - [ ] get the script nicely automated
 - [ ] review nvim config
-  - [ ] what features do i need
-  - [ ] what is the best way to implemente them (less plugins = better
+  - [ ] what features do i need?
+  - [ ] what is the best way to implement them? (fewer plugins = better)
   - [ ] what languages do i need to suport?
   - [ ] cmake?
-  - [ ] javascript?
+  - [x] javascript?
 - [ ] tmux
 - [ ] note taking?
-- [ ] emacs?
-- [ ] vscode?
-- [ ] tranmission? (piracy)
+- [ ] tranmission?
