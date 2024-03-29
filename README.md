@@ -1,41 +1,19 @@
 # dependencies
-```bash
-sudo apt install git tmux zsh
-```
-> or whatever the comand is on your distro. (dont care + didn't ask)
-
+- zsh
+- tmux
+- fd-find
+- ripgrep
+- nvim (installed automatically with appimage)
+- fuse2 (for the appimage)
+  
 # the script to install everything
 ```bash
-#!/usr/bin/env bash
-
-repo_dir="$HOME/.config-repo" 
-git_URL="git@github.com:TBDickenson/dotfiles.git"
-config() {
-  /usr/bin/git --git-dir="$repo_dir" --work-tree="$HOME" "$@"
-}
-
-git clone --bare $git_URL $repo_dir
-config checkout -f
-config config --local status.showUntrackedFiles no
-
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-
-sudo mkdir -p /opt/nvim
-sudo mv nvim.appimage /opt/nvim/nvim
+bash <(curl -sL "https://raw.githubusercontent.com/TobyOrNot2B/dotfiles/master/install.sh")
 ```
 
 # TODO
-- [ ] get the script nicely automated
-- [ ] review nvim config
-  - [ ] what features do i need
-  - [ ] what is the best way to implemente them (less plugins = better
-  - [ ] what languages do i need to suport?
-  - [ ] cmake?
-  - [ ] javascript?
-- [ ] tmux
+- [ ] get the install script nicely automated
+- [x] review nvim config
+- [x] tmux
 - [ ] note taking?
-- [ ] emacs?
-- [ ] vscode?
-- [ ] tranmission? (piracy)
+- [ ] tranmission?
