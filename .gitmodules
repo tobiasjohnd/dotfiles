@@ -6,4 +6,4 @@
 	url = https://github.com/xmonad/xmonad-contrib
 [submodule "Wallpaper"]
 	path = Wallpaper
-	url = ./Wallpaper
+	url = git@github.com:TobyOrNot2B/Wallpaper.git
