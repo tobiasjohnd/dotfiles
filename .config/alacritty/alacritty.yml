@@ -1,13 +1,14 @@
 window:
-  opacity: 0.9
+  opacity: 0.70
+  # blur: true
   dimensions:
     columns: 90
     lines: 30
   padding:
     x: 3
     y: 3
-    dynamic_padding: true
-    dynamic_title: true
+  #  dynamic_padding: true
+  #  dynamic_title: true
 
 font:
   normal:
@@ -79,6 +80,7 @@ key_bindings:
   - { key: PageDown,  mods: Shift,   action: ScrollPageDown, mode: ~Alt       }
   - { key: Home,      mods: Shift,   action: ScrollToTop,    mode: ~Alt       }
   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
+  - { key: F11,                      action: ToggleFullscreen                 }
 
 # bindings
 #

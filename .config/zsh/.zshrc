@@ -53,8 +53,9 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 export PATH="$PATH:/opt/nvim/"
-[ -f "/home/tobyd/.ghcup/env" ] && source "/home/tobyd/.ghcup/env" # ghcup-env
 
 if ! test -n "$TMUX"; then
     tmux attach || tmux
 fi
+
+[ -f "/home/tobyd/.ghcup/env" ] && . "/home/tobyd/.ghcup/env" # ghcup-env
