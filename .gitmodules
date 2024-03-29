@@ -7,3 +7,6 @@
 [submodule "Wallpaper"]
 	path = Wallpaper
 	url = git@github.com:TobyOrNot2B/Wallpaper.git
+[submodule ".config/nvim"]
+	path = .config/nvim
+	url = git@github.com:TobyOrNot2B/nvim.git
