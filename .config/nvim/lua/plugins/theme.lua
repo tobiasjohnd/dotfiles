@@ -5,9 +5,11 @@ return {
 	    local ayu = require("ayu")
 	    ayu.setup({
 		mirage =  false,
-		overides = {},
+		overides = {
+		    Normal = { bg = "None"},
+		}
 	    })
-	    ayu.colorscheme()
+	    --ayu.colorscheme()
 	end
     },
 }

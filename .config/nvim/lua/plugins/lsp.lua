@@ -7,11 +7,12 @@ return {
         "williamboman/mason-lspconfig.nvim",
 
 	--completion
-        "hrsh7th/nvim-cmp",
-        "L3MON4D3/LuaSnip",
-        "saadparwaiz1/cmp_luasnip",
-        "hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/nvim-cmp",
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
+	"folke/neodev.nvim",
 	--"hrsh7th/cmp-path"
 	--"hrsh7th/cmp-cmdline"
 
@@ -28,6 +29,9 @@ return {
 	    })
 	end
 	local lua_handler = function ()
+	    require("neodev").setup({
+		-- add any options here, or leave empty to use the default settings
+	    })
 	    require("lspconfig").lua_ls.setup({
 		capabiliteis = capabilities,
 		settings = {

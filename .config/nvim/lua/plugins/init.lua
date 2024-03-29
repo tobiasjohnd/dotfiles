@@ -1,4 +1,5 @@
 return {
+    {"github/copilot.vim"},
     {"editorconfig/editorconfig-vim"},
     { 'nvim-telescope/telescope-fzf-native.nvim', 
 	build = 'make' 
