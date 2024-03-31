@@ -1,9 +1,3 @@
-[submodule ".config/xmonad/xmonad"]
-	path = .config/xmonad/xmonad
-	url = https://github.com/xmonad/xmonad
-[submodule ".config/xmonad/xmonad-contrib"]
-	path = .config/xmonad/xmonad-contrib
-	url = https://github.com/xmonad/xmonad-contrib
 [submodule "Wallpaper"]
 	path = Wallpaper
 	url = git@github.com:TobyOrNot2B/Wallpaper.git
@@ -12,4 +6,4 @@
 	url = git@github.com:TobyOrNot2B/nvim.git
 [submodule ".config/xmonad"]
 	path = .config/xmonad
-	url = /home/tobyd/.config/xmonad/
+	url = git@github.com:TobyOrNot2B/xmonad.git
