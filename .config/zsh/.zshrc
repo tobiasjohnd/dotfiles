@@ -1,3 +1,7 @@
+if [ -z "$TMUX" ]; then
+    tmux attach -t 0 || tmux new -s 0
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -54,8 +58,5 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 
 export PATH="$PATH:/opt/nvim/"
 
-if ! test -n "$TMUX"; then
-    tmux attach || tmux
-fi
 
 [ -f "/home/tobyd/.ghcup/env" ] && . "/home/tobyd/.ghcup/env" # ghcup-env
