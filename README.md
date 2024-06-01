@@ -15,5 +15,3 @@ bash <(curl -sL "https://raw.githubusercontent.com/TobyOrNot2B/dotfiles/master/i
 - [ ] get the install script nicely automated
 - [x] review nvim config
 - [x] tmux
-- [ ] note taking?
-- [ ] tranmission?
