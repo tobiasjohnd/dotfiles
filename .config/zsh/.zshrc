@@ -37,6 +37,19 @@ _comp_options+=(globdots)
 ## Aliases
 # git bare repo alias for dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.config-repo/ --work-tree=$HOME'
+alias ls='ls --color=auto'
+alias tmux='tmux attach -t 0 || tmux new -s 0'
+alias gl='git log --oneline --graph --parents --decorate'
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add .'
+alias gb='git branch'
+alias gc='git commit'
+alias gp='git push'
+alias gd='git diff'
+alias gsw='git switch'
+alias gm='git merge'
 
 # TODO: make it so i can have an alias that takes me to a session selection dialogue.
 
@@ -53,6 +66,7 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 export PATH="$PATH:/opt/nvim/"
+export PATH=$PATH:$HOME/go/bin
 
 
 [ -f "/home/tobyd/.ghcup/env" ] && . "/home/tobyd/.ghcup/env" # ghcup-env
